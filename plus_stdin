@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+# SPDX-FileCopyrightText: 2025 Soshi Ohseto <付けたければメールアドレス>
+
 import sys
 
 ans = 0
