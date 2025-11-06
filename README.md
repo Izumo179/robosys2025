@@ -1,4 +1,10 @@
 # robosys2025
+
+![test](https://github.com/soshiohseto/robosys2025/actions/workflows/test.yml/badge.svg)
+
+## こんなコマンドだよ
+云々
+
 ロボットシステム学課題1
 - このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
 - このパッケージは，aaa由来のコード（© 2025 Hoge Fuge）を利用しています．修正
