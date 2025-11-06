@@ -1,6 +1,6 @@
 # robosys2025
 
-![ test ](https://github.com/soshiohseto/robosys2025/actions/workflows/test.yml/badge.svg)
+![test](https://github.com/izumo/robosys2025/actions/workflows/test.yml/badge.svg)
 
 ## こんなコマンドだよ
 云々
