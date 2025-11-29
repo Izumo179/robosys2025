@@ -9,7 +9,7 @@ out="$(printf "A\nBB\n" | ./plus)"
 expected=$(cat << 'EOF'
 **********
 *** A  ***
-*** Bb ***
+*** BB ***
 **********
 EOF
 )
