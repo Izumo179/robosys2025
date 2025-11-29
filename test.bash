@@ -44,13 +44,13 @@ fi
 echo "テスト2 クリア！"
 
 #テスト3
-out3="$(./plus </dev/null || true)"
-
-expected3="empty"
-
-if [ "$out3" != "$expected3" ]; then
-    echo "TEST3 FAILED (expected at this stage)" >&2
+if [ -n "$out3" ]; then
+    echo "TEST3 FAILED: empty input should produce no output" >&2
+    echo "got:"
+    printf '%s\n' "$out3"
     exit 1
 fi
 
 echo "テスト3 クリア！"
+
+echo "全部OK！"
