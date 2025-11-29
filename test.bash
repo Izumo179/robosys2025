@@ -41,4 +41,16 @@ if [ "$out2" != "$expected2" ]; then
     exit 1
 fi
 
-echo "テスト2　クリア！"
+echo "テスト2 クリア！"
+
+#テスト3
+out3="$(./plus </dev/null || true)"
+
+expected3="empty"
+
+if [ "$out3" != "$expected3" ]; then
+    echo "TEST3 FAILED (expected at this stage)" >&2
+    exit 1
+fi
+
+echo "テスト3 クリア！"
