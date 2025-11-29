@@ -13,8 +13,8 @@ def main() -> None:
 
     inner_width = max(len(l) for l in lines)
 
-    sample_line = f"*** {'X' * inner_width} ***"
-    border = "*" * len(sample_line)
+    border_len = inner_width + 8
+    border = "*" * border_len
 
     print(border)
     for l in lines:
