@@ -24,3 +24,29 @@ if [ "$out" != "$expected" ]; then
 fi
 
 echo "OK!"
+
+
+################################
+###    errorが発生するはず   ###
+################################
+
+out2="$(printf "HELLO\nWORLD\n" | ./plus)"
+
+# 1文字短いようにしてみる
+expected2=$(cat << 'EOF'
+***********
+*** HELLO ***
+*** WORLD ***
+***********
+EOF
+)
+
+#エラーが起きたら成功
+if [ "$out2" != "$expected2" ]; then
+    echo "intentional test failure: box width mismatch" >&2
+    echo "got:"
+    printf '%s\n' "$out2"
+    echo "expected:"
+    printf '%s\n' "$expected2"
+    exit 1
+fi
