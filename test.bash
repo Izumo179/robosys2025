@@ -23,4 +23,4 @@ if [ "$out" != "$expected" ]; then
     exit 1
 fi
 
-echo "OK!問題なし‼"
+echo "OK!"
