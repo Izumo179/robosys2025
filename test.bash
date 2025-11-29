@@ -4,7 +4,7 @@
 
 set -eu
 
-out="$(printf "A\nB\n" | ./emphbox)"
+out="$(printf "A\nB\n" | ./plus)"
 
 echo "$out" | head -n 1 | grep -E '^\*+$' >/dev/null
 
