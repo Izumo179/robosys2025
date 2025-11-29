@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2025 Soshi Ohseto <付けたければメールアドレス>
 # SPDX-License-Identifier: BSD-3-Clause
 
+#テスト1
 set -eu
 
 out1="$(printf "A\nBB\n" | ./plus)"
@@ -24,3 +25,20 @@ if [ "$out1" != "$expected1" ]; then
 fi
 
 echo "テスト1 クリア！"
+
+#テスト2
+out2="$(printf "HELLO\n" | ./plus)"
+
+expected2=$(cat << 'EOF'
+*************
+*** HELLO ***
+*************
+EOF
+)
+
+if [ "$out2" != "$expected2" ]; then
+    echo "TEST2 FAILED (expected at this stage)" >&2
+    exit 1
+fi
+
+echo "テスト2　クリア！"
