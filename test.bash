@@ -4,23 +4,23 @@
 
 set -eu
 
-out="$(printf "A\nBB\n" | ./plus)"
+out1="$(printf "A\nBB\n" | ./plus)"
 
-expected=$(cat << 'EOF'
-**********
+expected1=$(cat << 'EOF'
+*********
 *** A  ***
 *** BB ***
-**********
+*********
 EOF
 )
 
-if [ "$out" != "$expected" ]; then
-    echo "unexpected output" >&2
-    echo "got:"
-    printf '%s\n' "$out"
-    echo "expected:"
-    printf '%s\n' "$expected"
+if [ "$out1" != "$expected1" ]; then
+    echo "TEST1 FAILED (as expected)" >&2
+    echo "--- got ---"
+    printf '%s\n' "$out1"
+    echo "--- expected (wrong on purpose) ---"
+    printf '%s\n' "$expected1"
     exit 1
 fi
 
-echo "OK!"
+echo "テスト1 クリア！"
