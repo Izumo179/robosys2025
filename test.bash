@@ -2,17 +2,10 @@
 # SPDX-FileCopyrightText: 2025 Soshi Ohseto <付けたければメールアドレス>
 # SPDX-License-Identifier: BSD-3-Clause
 
-ng () {
-        echo ${1}行目が違うよ
-        res=1
-}
+set -eu
 
-res=0
+out="$(printf "A\nB\n" | ./emphbox)"
 
-### NOMAL INPUT ###
-out=$(seq 5 | ./plus)
-[ "${out}" = 15 ] || ng "$LINENO"
+echo "$out" | head -n 1 | grep -E '^\*+$' >/dev/null
 
-
-[ "$res" = 0 ] && echo OK
-exit $res
+echo "OK (initial test)"

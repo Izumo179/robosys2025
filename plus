@@ -4,11 +4,19 @@
 
 import sys
 
-ans = 0
-for line in sys.stdin:
-    try:
-        ans += int(line)
-    except:
-        ans += float(line)
+def main():
+    lines = [l.rstrip('\n') for l in sys.stdin]
 
-print(ans)
+
+    width = max(len(l) for l in lines) if lines else 0
+
+
+    border = "*" * (width + 6)
+
+    print(border)
+    for l in lines:
+        print(f"*** {l} ***")
+    print(border)
+
+if __name__ == "__main__":
+    main()
