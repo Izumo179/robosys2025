@@ -4,19 +4,23 @@
 
 import sys
 
-def main():
-    lines = [l.rstrip('\n') for l in sys.stdin]
+def main() -> None:
 
+    lines = [line.rstrip("\n") for line in sys.stdin]
 
-    width = max(len(l) for l in lines) if lines else 0
+    if not lines:
+        return
 
+    inner_width = max(len(l) for l in lines)
 
-    border = "*" * (width + 6)
+    sample_line = f"*** {'X' * inner_width} ***"
+    border = "*" * len(sample_line)
 
     print(border)
     for l in lines:
-        print(f"*** {l} ***")
+        print(f"*** {l:<{inner_width}} ***")
     print(border)
+
 
 if __name__ == "__main__":
     main()
