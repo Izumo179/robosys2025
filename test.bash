@@ -7,10 +7,10 @@ set -eu
 out1="$(printf "A\nBB\n" | ./plus)"
 
 expected1=$(cat << 'EOF'
-*********
+**********
 *** A  ***
 *** BB ***
-*********
+**********
 EOF
 )
 
