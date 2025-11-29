@@ -44,6 +44,8 @@ fi
 echo "テスト2 クリア！"
 
 #テスト3
+out3="$(./plus </dev/null || true)"
+
 if [ -n "$out3" ]; then
     echo "TEST3 FAILED: empty input should produce no output" >&2
     echo "got:"
@@ -52,5 +54,4 @@ if [ -n "$out3" ]; then
 fi
 
 echo "テスト3 クリア！"
-
 echo "全部OK！"
