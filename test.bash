@@ -4,8 +4,23 @@
 
 set -eu
 
-out="$(printf "A\nB\n" | ./plus)"
+out="$(printf "A\nBB\n" | ./plus)"
 
-echo "$out" | head -n 1 | grep -E '^\*+$' >/dev/null
+expected=$(cat << 'EOF'
+**********
+*** A  ***
+*** Bb ***
+**********
+EOF
+)
 
-echo "OK (initial test)"
+if [ "$out" != "$expected" ]; then
+    echo "unexpected output" >&2
+    echo "got:"
+    printf '%s\n' "$out"
+    echo "expected:"
+    printf '%s\n' "$expected"
+    exit 1
+fi
+
+echo "OK!!問題なし‼"
