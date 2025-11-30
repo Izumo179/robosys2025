@@ -8,18 +8,18 @@ set -eu
 out1="$(printf "A\nBB\n" | ./plus)"
 
 expected1=$(cat << 'EOF'
-**********
-*** A  ***
-*** BB ***
-**********
+＿人人＿
+＞ A  ＜
+＞ BB ＜
+￣Y^Y^￣
 EOF
 )
 
 if [ "$out1" != "$expected1" ]; then
-    echo "TEST1 FAILED (as expected)" >&2
+    echo "TEST1 FAILED" >&2
     echo "--- got ---"
     printf '%s\n' "$out1"
-    echo "--- expected (wrong on purpose) ---"
+    echo "--- expected ---"
     printf '%s\n' "$expected1"
     exit 1
 fi
@@ -30,14 +30,18 @@ echo "テスト1 クリア！"
 out2="$(printf "HELLO\n" | ./plus)"
 
 expected2=$(cat << 'EOF'
-*************
-*** HELLO ***
-*************
+＿人人人人人＿
+＞ HELLO ＜
+￣Y^Y^Y^Y^Y^￣
 EOF
 )
 
 if [ "$out2" != "$expected2" ]; then
-    echo "TEST2 FAILED (expected at this stage)" >&2
+    echo "TEST2 FAILED" >&2
+    echo "--- got ---"
+    printf '%s\n' "$out2"
+    echo "--- expected ---"
+    printf '%s\n' "$expected2"
     exit 1
 fi
 

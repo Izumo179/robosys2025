@@ -4,22 +4,23 @@
 
 import sys
 
-
-def main() -> None:
+def main():
     lines = [line.rstrip("\n") for line in sys.stdin]
 
     if not lines:
         return
 
     inner_width = max(len(l) for l in lines)
-    sample_line = f"*** {'X' * inner_width} ***"
-    border = "*" * len(sample_line)
 
-    print(border)
+    top = "＿" + "人" * inner_width + "＿"
+
+    bottom = "￣" + "Y^" * inner_width + "￣"
+
+    print(top)
     for l in lines:
-        print(f"*** {l:<{inner_width}} ***")
-    print(border)
 
+        print(f"＞ {l:<{inner_width}} ＜")
+    print(bottom)
 
 if __name__ == "__main__":
     main()
