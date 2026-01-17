@@ -48,7 +48,15 @@ fi
 echo "テスト2 クリア！"
 
 #テスト3
-out3="$(./plus </dev/null || true)"
+set +e
+out3="$(./plus </dev/null)"
+status3=$?
+set -e
+
+if [ "$status3" -ne 0 ]; then
+    echo "TEST3 FAILED: exit status should be 0 (got $status3)" >&2
+    exit 1
+fi
 
 if [ -n "$out3" ]; then
     echo "TEST3 FAILED: empty input should produce no output" >&2
