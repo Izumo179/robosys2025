@@ -5,7 +5,7 @@
 #テスト1
 set -eu
 
-out1="$(printf "A\nBB\n" | ./plus)"
+out1="$(printf "A\nBB\n" | ./boxtext)"
 
 expected1=$(cat << 'EOF'
 ＿人人＿
@@ -27,7 +27,7 @@ fi
 echo "テスト1 クリア！"
 
 #テスト2
-out2="$(printf "HELLO\n" | ./plus)"
+out2="$(printf "HELLO\n" | ./boxtext)"
 
 expected2=$(cat << 'EOF'
 ＿人人人人人＿
@@ -49,7 +49,7 @@ echo "テスト2 クリア！"
 
 #テスト3
 set +e
-out3="$(./plus </dev/null)"
+out3="$(./boxtext </dev/null)"
 status3=$?
 set -e
 
