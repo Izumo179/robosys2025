@@ -21,7 +21,7 @@ GitHubのテストでは「Python3.6/3.7/3.8/3.9/3.10」の環境で正常に動
 ```
 $ git clone https://github.com/Izumo179/robosys2025.git
 $ cd robosys2025
-$ chmod +x plus
+$ chmod +x textbox
 ```
 
 ## 使い方の例
@@ -29,7 +29,7 @@ $ chmod +x plus
 標準入力から強調したい文字列を渡します．
 
 ```console
-$ printf "A\nBB\n" | ./plus
+$ printf "A\nBB\n" | ./textbox
 
 ＿人人＿
 ＞ A  ＜
@@ -39,7 +39,7 @@ $ printf "A\nBB\n" | ./plus
 
 
 ## テストの実行方法
-このリポジトリには，plusコマンドの動作を確認するためのテストスクリプトtest.bashが含まれています．
+このリポジトリには，textboxコマンドの動作を確認するためのテストスクリプトtest.bashが含まれています．
 
 ローカル環境でテストを実行するには，リポジトリ直下で次のコマンドを実行します．
 
